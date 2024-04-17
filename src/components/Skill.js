@@ -1,14 +1,50 @@
 import React from "react";
 import SkillItem from "./SkillItem";
 
+const skills = [
+  {
+    skill: "HTML+CSS",
+    level: "advanced",
+    color: "#2662EA",
+  },
+  {
+    skill: "JavaScript",
+    level: "advanced",
+    color: "#EFD81D",
+  },
+  {
+    skill: "Web Design",
+    level: "advanced",
+    color: "#C3DCAF",
+  },
+  {
+    skill: "Git and GitHub",
+    level: "intermediate",
+    color: "#E84F33",
+  },
+  {
+    skill: "React",
+    level: "advanced",
+    color: "#60DAFB",
+  },
+  {
+    skill: "Svelte",
+    level: "beginner",
+    color: "#FF3B00",
+  },
+];
 
-
-export default function Skill () {
-  return <ul className="skill-list">
-  <SkillItem item="css" skillStyle="red" emoji="🤴"/>
-  <SkillItem item="javascript" skillStyle="orange" emoji="👩‍🦲" />
-  <SkillItem item="html" skillStyle="blue" emoji="👳‍♂️"/>
-  <SkillItem item="sass" skillStyle="green" emoji="👼"/>
-  <SkillItem item="php" skillStyle="pink" emoji="👳‍♀️"/>
+export default function Skill() {
+  return (
+    <ul className="skill-list">
+      {skills.map((skill) => (
+        // <SkillItem
+        //   item={skill.skill}
+        //   skillStyle={skill.color}
+        //   emoji={skill.level}
+        // />
+        <SkillItem skill={skill} />
+      ))}
     </ul>
+  );
 }
